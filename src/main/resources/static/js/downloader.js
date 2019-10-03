@@ -83,7 +83,7 @@ class Downloader {
             }
             if ((xhr.status == 200 || xhr.status == 206 || xhr.status == 304 || xhr.status == 416) && xhr.readyState == this.DONE) {
                 var rangeReceived = xhr.getResponseHeader("Content-Range");
-                Log.info("Downloader", "Received data range: " + rangeReceived);
+                console.log("Downloader", "Received data range: " + rangeReceived);
                 /* if the length of the file is not known, we get it from the response header */
                 if (!dl.totalLength && rangeReceived) {
                     var sizeIndex;
